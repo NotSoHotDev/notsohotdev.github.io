@@ -406,4 +406,23 @@
 
 	});
 
+	$("#contact-form").submit(function() {
+		var str = $(this).serialize();
+		$.ajax({
+			type: "POST",
+			url: "http://test.kaptur.by/nshd-mail.php",
+			data: str,
+			success: function(msg) {
+				if(msg == 'OK') {
+					$('#result').html('Спасибо! Ваше сообщение отправлено!');
+					$('#contact-form').trigger('reset');
+				}
+				else {result = msg;}
+				$('#result').html(result);
+				result = "";
+			}
+		});
+		return false;
+	});
+
 })(jQuery);
