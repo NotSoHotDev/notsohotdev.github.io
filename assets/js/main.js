@@ -410,7 +410,7 @@
 		var str = $(this).serialize();
 		$.ajax({
 			type: "POST",
-			url: "http://test.kaptur.by/nshd-mail.php",
+			url: "",
 			data: str,
 			success: function(msg) {
 				if(msg == 'OK') {
